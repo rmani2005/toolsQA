@@ -14,13 +14,16 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class Utils {
-		public static WebDriver driver = null;
+public class Utils 
+{
+		
+	public static WebDriver driver = null;
 	public static WebDriver OpenBrowser(int iTestCaseRow) throws Exception{
 		String sBrowserName;
 		try{
 		sBrowserName = ExcelUtils.getCellData(iTestCaseRow, Constant.Col_Browser);
-		if(sBrowserName.equals("Mozilla")){
+		if(sBrowserName.equals("Mozilla"))
+		{
 			driver = new FirefoxDriver();
 			Log.info("New driver instantiated");
 		    driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
